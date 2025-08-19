@@ -11,20 +11,10 @@ class crud_Controller extends Controller {
     {
         parent::__construct();
         $this->call->model('crud_Model');
-        $this->call->library('form_validation');
 
         // $this->call->helper('message');
     }
 
-    public function read(){
-         $data['getAll'] = $this->crud_Model->getAll();
-        $this->call->view('index', $data);
-    }
-
-
-  public function createUser()
-    {
-        $this->form_validation
             ->name('student_id')
                 ->required()
                 ->max_length(50)
@@ -50,8 +40,6 @@ class crud_Controller extends Controller {
                 'course'     => $_POST['course']
             ]);
 
-            setMessage('success', 'Student registered successfully!');
-            redirect('/');
         }
     }
 
@@ -64,8 +52,7 @@ class crud_Controller extends Controller {
             'last_name'  => $_POST['last_name'],
             'course'     => $_POST['course'],
         ]);
-        setMessage('success', 'Student updated successfully!');
-        redirect('/');
+        
     }
 
 
