@@ -33,10 +33,10 @@
           </tr>
         </thead>
         <tbody>
-          <?php if(!empty($getAll)): ?>
+          <?php if(!empty($getAlll)): ?>
             <?php foreach($getAll as $student): ?>
               <tr>
-                <td><?= htmlspecialchars($student['student_id']); ?></td>
+                <td><?= htmlspecialchars($student['id']); ?></td>
                 <td><?= htmlspecialchars($student['first_name']); ?></td>
                 <td><?= htmlspecialchars($student['last_name']); ?></td>
                 <td><?= htmlspecialchars($student['course']); ?></td>
@@ -84,10 +84,10 @@
               </div>
 
            
-              <div class="modal fade" id="deleteModal<?= $student['id']; ?>" tabindex="-1">
+              <div class="modal fade" id="deleteModal<?= $student['student_id']; ?>" tabindex="-1">
                 <div class="modal-dialog">
                   <div class="modal-content">
-                    <form action="/delete-user/<?= $student['id']; ?>" method="POST">
+                    <form action="/delete-user/<?= $student['student_id']; ?>" method="POST">
                       <div class="modal-header">
                         <h5 class="modal-title">Delete Student</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
